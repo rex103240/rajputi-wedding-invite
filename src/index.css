@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Rozha+One&family=Yatra+One&family=Tiro+Devanagari+Hindi:ital@0;1&family=Martel:wght@400;600;700&display=swap');
+
+:root {
+  /* ─── Rich Royal Kesariya (Saffron Paper) ─── */
+  --saffron-base: #C8751B;
+  --saffron-light: #DE8F2C;
+  --saffron-dark: #A85A0E;
+  --saffron-deep: #8E4805;
+
+  /* ─── Auspicious Kumkum Maroon (Deep Ink) ─── */
+  --maroon-royal: #7A0014;
+  --maroon-deep: #5A000F;
+  --maroon-dark: #3E000A;
+  --maroon-light: #9B1D30;
+
+  /* ─── Royal Gold Foil ─── */
+  --gold-foil: #C9A84C;
+  --gold-light: #F0E4B8;
+  --gold-deep: #8B6F1F;
+  --gold-shadow: rgba(139, 111, 31, 0.35);
+
+  /* ─── Warm Cream / Ivory ─── */
+  --cream-card: #FFF8EB;
+  --cream-soft: #F9EED9;
+
+  /* ─── Authentic Devanagari Fonts ─── */
+  --font-headline: 'Rozha One', serif;
+  --font-title: 'Yatra One', cursive;
+  --font-script: 'Tiro Devanagari Hindi', serif;
+  --font-body: 'Martel', serif;
+
+  --ease-royal: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background: #200B02;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--maroon-deep);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 25%, #C8751B 0%, #9C520C 50%, #4D2102 100%);
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--saffron-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--maroon-royal);
+  border-radius: 3px;
+  border: 1px solid var(--gold-foil);
+}
+
+/* ─── Authentic Handmade Marbled Paper Texture ─── */
+.kankotri-paper {
+  background-color: var(--saffron-base);
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(240, 165, 60, 0.5) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 15%, rgba(160, 80, 10, 0.55) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 60%, rgba(230, 150, 50, 0.4) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 85%, rgba(145, 65, 8, 0.5) 0%, transparent 50%),
+    radial-gradient(ellipse at 15% 80%, rgba(185, 105, 20, 0.45) 0%, transparent 50%);
+  position: relative;
+}
+
+.kankotri-paper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(90, 40, 5, 0.03) 3px,
+      rgba(90, 40, 5, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 5px,
+      rgba(90, 40, 5, 0.02) 5px,
+      rgba(90, 40, 5, 0.02) 6px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Traditional Gold Foil Frame ─── */
+.gold-card-frame {
+  position: relative;
+  border: 2px solid var(--gold-foil);
+  box-shadow:
+    0 0 0 1px var(--maroon-deep),
+    0 0 0 3px var(--gold-foil),
+    0 18px 45px rgba(60, 0, 10, 0.4),
+    inset 0 0 40px rgba(180, 100, 20, 0.15);
+}
+
+.gold-card-frame::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid var(--gold-foil);
+  outline: 1px dashed rgba(122, 0, 20, 0.4);
+  outline-offset: -5px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── Corner Ornaments ─── */
+.corner-art {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.corner-art.tl {
+  top: 7px;
+  left: 7px;
+  border-top: 2.5px solid var(--gold-foil);
+  border-left: 2.5px solid var(--gold-foil);
+}
+.corner-art.tr {
+  top: 7px;
+  right: 7px;
+  border-top: 2.5px solid var(--gold-foil);
+  border-right: 2.5px solid var(--gold-foil);
+}
+.corner-art.bl {
+  bottom: 7px;
+  left: 7px;
+  border-bottom: 2.5px solid var(--gold-foil);
+  border-left: 2.5px solid var(--gold-foil);
+}
+.corner-art.br {
+  bottom: 7px;
+  right: 7px;
+  border-bottom: 2.5px solid var(--gold-foil);
+  border-right: 2.5px solid var(--gold-foil);
+}
+
+/* ─── Traditional Buttons ─── */
+.btn-open-kankotri {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  background: linear-gradient(145deg, var(--maroon-royal) 0%, var(--maroon-deep) 100%);
+  border: 1.5px solid var(--gold-foil);
+  padding: 16px 48px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.35s var(--ease-royal);
+  box-shadow:
+    0 6px 20px rgba(62, 0, 10, 0.5),
+    inset 0 1px 0 rgba(240, 228, 184, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.btn-open-kankotri:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(145deg, #94051D 0%, var(--maroon-royal) 100%);
+  box-shadow: 0 10px 28px rgba(62, 0, 10, 0.6), 0 0 16px rgba(201, 168, 76, 0.3);
+  color: #FFF;
+}
+
+.btn-hindi-secondary {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--maroon-royal);
+  background: var(--cream-card);
+  border: 1px solid var(--gold-foil);
+  padding: 10px 22px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(60, 0, 10, 0.12);
+}
+
+.btn-hindi-secondary:hover {
+  background: #FFF;
+  transform: translateY(-1px);
+  border-color: var(--maroon-royal);
+  box-shadow: 0 4px 14px rgba(60, 0, 10, 0.2);
+}
+
+.btn-call-action {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  background: linear-gradient(145deg, var(--maroon-royal), var(--maroon-deep));
+  border: 1px solid var(--gold-foil);
+  padding: 12px 24px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(62, 0, 10, 0.35);
+  flex: 1 1 140px;
+}
+
+.btn-call-action:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(145deg, #94051D, var(--maroon-royal));
+  color: #FFF;
+}
+
+.btn-whatsapp-action {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #FFF;
+  background: linear-gradient(145deg, #1B7A65, #0E5E4C);
+  border: 1px solid #2ECC71;
+  padding: 12px 24px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(14, 94, 76, 0.35);
+  flex: 1 1 140px;
+}
+
+.btn-whatsapp-action:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(145deg, #22997E, #127A63);
+}
+
+/* ─── Auspicious Red & Gold Divider ─── */
+.mangal-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  max-width: 320px;
+  margin: 18px auto;
+}
+
+.mangal-divider::before,
+.mangal-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--maroon-royal));
+}
+
+.mangal-divider::after {
+  background: linear-gradient(to left, transparent, var(--maroon-royal));
+}
+
+.mangal-divider .symbol {
+  color: var(--maroon-royal);
+  font-size: 1.1rem;
+  line-height: 1;
+}
